@@ -1,0 +1,50 @@
+{
+  "profile": {
+    "name": "Martín Ezequiel dos Santos",
+    "wanted_job": "Trainee Web Developer",
+    "email": "mds.designss@gmail.com",
+    "city": "La Rioja",
+    "country": "Argentina",
+    "social_networks": {
+      "facebook": "https://www.facebook.com/tinchods1/",
+      "github": "https://github.com/tinchods93",
+      "linkedin": "https://www.linkedin.com/in/martin-e-dos-santos/",
+      "hackerrank": "https://www.hackerrank.com/TinchoDS93?hr_r=1"
+    },
+    "about_you": [
+      "Soy un Argentino apasionado por el desarrollo de aplicaciones web, mobile y también game development. Me considero una persona proactiva, siempre buscando mejorar en mi trabajo, siempre buscando soluciones a los problemas que se presentan.",
+      "Actualmente me encuentro cursando la carrera de Ingeniería en Sistemas de información, en 3ro/4to año en la Universidad Nacional de La Rioja. Estoy más que dispuesto a trabajar de forma virtual o a reubicarme en cuanto termine la carrera."
+    ],
+    "experience": [
+      "Enseñas – Proyecto universitario de autoría propia, se trata de un juego que ayuda el aprendizaje del lenguaje de señas argentino, actualmente en desarrollo, donde utilizamos tecnologías como Unity, Github, Krita, Blender y otras aplicaciones para ayudarnos a administrar el proyecto. También estamos aplicando la metodología ágil “SCRUM”",
+      "Actualmente somos 4 personas participando del proyecto, siendo yo el líder de éste. Pero, funcionalmente cumplo el rol de desarrollador utilizando C#. Por otro lado, también estoy encargado del modelado y animación de los personajes en Blender."
+    ],
+    "education": [
+      [
+        "Ingeniería en Sistemas de Información",
+        "2018 – presente. Universidad Nacional de La Rioja"
+      ]
+    ],
+    "certificates": [
+      ["Python Básico", "UnLaR 2020"],
+      ["Python Intermedio", "UnLaR 2020"],
+      ["Python Data Science", "Udemy 2019"],
+      ["JavaScript moderno", "Udemy 2020"],
+      [
+        "Entorno de trabajo optimizado para React",
+        "PoloTecnologico La Rioja 2021"
+      ],
+      [
+        "Desarrollo frontend frontend sin framework: Html, Css y Javascript",
+        "PoloTecnologico La Rioja 2021"
+      ],
+      ["Desarrollo frontend con React", "PoloTecnologico La Rioja 2021"]
+    ],
+    "icon_classes": {
+      "about_you": "fa-user-circle",
+      "experience": "fa-briefcase",
+      "education": "fa-graduation-cap",
+      "certificates": "fa-certificate"
+    }
+  }
+}
