@@ -1,27 +1,30 @@
 .curriculum-card {
-  display: grid;
+  display: flex;
   border-radius: 10px;
-  grid-template-columns: 35% 65%;
-  width: 90em;
-  min-width: 560px;
+  flex-wrap: wrap;
+  /* grid-template-columns: 35% 65%; */
+  width: 100em;
+  min-width: 350px;
   height: fit-content;
   background: rgb(255, 255, 255);
   overflow: hidden;
   margin: 1%;
+  text-align: justify;
 }
 
 .personal-data {
   background: rgb(20, 56, 91);
-  height: 100%;
+  flex: 1;
+  height: auto;
   width: 100%;
-  min-width: 200px;
+  min-width: 1fr;
   background: linear-gradient(
     180deg,
     rgba(20, 56, 91, 1) 0%,
     rgba(22, 134, 236, 1) 100%
   );
   padding-top: 30%;
-  padding-left: 1%;
+  padding-left: 0.5%;
   padding-right: 1%;
   box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.4);
   text-align: center;
@@ -60,11 +63,15 @@
   font-size: 1.6rem;
 }
 .profile-text {
+  width: 100%;
+  height: auto;
+  display: block;
   margin-bottom: 5%;
 }
 
 .profile-text .personal-data-container {
   display: flex;
+  flex-wrap: wrap;
   color: white;
   font-weight: 600;
   font-size: 1rem;
@@ -83,9 +90,10 @@
   text-decoration: none;
 }
 .experience-data {
+  flex: 2;
   height: 100%;
   width: 100%;
-  min-width: 370px;
+  min-width: 1fr;
   padding: 5%;
   text-align: justify;
 }
@@ -95,7 +103,7 @@
   margin: 1%;
 }
 
-.fas {
+.title_icon {
   font-size: 2em;
   color: rgb(32, 32, 85);
 }
@@ -135,10 +143,6 @@
   font-weight: bolder;
 }
 
-.section-body .filled {
-  color: cornflowerblue;
-}
-
 .skills {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -147,10 +151,36 @@
 }
 .skillsContainer {
   display: flex;
+  flex-wrap: wrap;
+  height: 100%;
   width: 100%;
   margin-bottom: 1%;
 }
+.skillLevel {
+  font-size: 35px;
+  min-width: 170px;
+}
+.skills_icon {
+  font-size: 1em;
+  color: rgb(19, 19, 56);
+}
+
+.section-body .filled {
+  color: cornflowerblue;
+}
 .skill-title {
-  /* background: blueviolet; */
+  padding-top: 10px;
   width: 100px;
+  min-width: 1fr;
+}
+
+@media screen and (min-width: 320px) {
+  .skills_icon {
+    font-size: calc(30px + 6 * ((100vw - 320px) / 680));
+  }
+}
+@media screen and (min-width: 1000px) {
+  .skills_icon {
+    font-size: 35px;
+  }
 }
