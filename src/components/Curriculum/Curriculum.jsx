@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { profile as Profile } from '../../profile.json';
 import { capitalize } from '../../utils/stringUtils';
+import avatar from '../../img/avatar.jpg';
 import './Curriculum.css';
 
 export default class Curriculum extends Component {
@@ -66,6 +67,11 @@ export default class Curriculum extends Component {
         {profile.personal_data !== undefined ? (
           <div className='curriculum-card'>
             <div className='personal-data'>
+              <div className='avatar-container'>
+                <div className='avatar-img'>
+                  <img src={avatar} alt='avatar' />
+                </div>
+              </div>
               <div className='profile-title'>
                 <span className='profile-name'>{profile.name}</span>
                 <p>{profile.wanted_job}</p>
@@ -83,9 +89,15 @@ export default class Curriculum extends Component {
                           attr !== 'telefono' &&
                           attr !== 'linkedin' &&
                           attr !== 'github' &&
-                          attr !== 'hackerRank'
-                            ? capitalize(profile.personal_data[attr])
-                            : profile.personal_data[attr]}
+                          attr !== 'hackerRank' ? (
+                            capitalize(profile.personal_data[attr])
+                          ) : attr !== 'email' && attr !== 'telefono' ? (
+                            <a href={profile.personal_data[attr]}>
+                              {profile.personal_data[attr]}
+                            </a>
+                          ) : (
+                            profile.personal_data[attr]
+                          )}
                         </div>
                       </div>
                     </Fragment>
@@ -96,14 +108,16 @@ export default class Curriculum extends Component {
             </div>
             <div className='experience-data'>
               {this.spawnText('about_you', 'ACERCA DE MI')}
-              {this.spawnText('experience', 'EXPERIENCIA')}
-              {
-                <Item
-                  data={profile.education}
-                  title={'EDUCACIÓN'}
-                  icon_class={profile.icon_classes.education}
-                />
-              }
+              <Item
+                data={profile.education}
+                title={'EDUCACIÓN'}
+                icon_class={profile.icon_classes.education}
+              />
+              <Item
+                data={profile.projects}
+                title={'PROJECTOS'}
+                icon_class={profile.icon_classes.experience}
+              />
               <Skills
                 data={profile.skills}
                 title={'HABILIDADES'}
@@ -114,13 +128,11 @@ export default class Curriculum extends Component {
                 title={'LENGUAJES'}
                 icon_class={profile.icon_classes.languages}
               />
-              {
-                <Item
-                  data={profile.certificates}
-                  title={'CERTIFICADOS'}
-                  icon_class={profile.icon_classes.certificates}
-                />
-              }
+              <Item
+                data={profile.certificates}
+                title={'CERTIFICADOS'}
+                icon_class={profile.icon_classes.certificates}
+              />
             </div>
           </div>
         ) : (
@@ -135,12 +147,44 @@ const Item = ({ data, title, icon_class }) => {
   const _data = {
     title: title,
     body: data.map((element, index) => {
-      return (
+      return title === 'PROJECTOS' ? (
         <Fragment key={index}>
           <p className='desc-text'>
-            <span className='exp-title'>{element[0]}</span>
+            <span className='exp-title'>{element.name}</span>
             <span> </span>
-            <span>{element[1]}</span>
+            <span>
+              {element.body.map((elem, index) => {
+                return index !== element.body.length - 1 ? (
+                  <Fragment key={index}>
+                    {elem} <br />
+                  </Fragment>
+                ) : (
+                  <Fragment key={index}>{elem}</Fragment>
+                );
+              })}
+            </span>
+            {element.URL !== undefined && element.URL !== '#' ? (
+              <a href={element.URL} className='title_link'>
+                [LINK]
+              </a>
+            ) : (
+              <></>
+            )}
+          </p>
+        </Fragment>
+      ) : (
+        <Fragment key={index}>
+          <p className='desc-text'>
+            <span className='exp-title'>{element.name}</span>
+            <span> </span>
+            <span>{element.body}</span>
+            {element.URL !== undefined && element.URL !== '#' ? (
+              <a href={element.URL} className='title_link'>
+                [LINK]
+              </a>
+            ) : (
+              <></>
+            )}
           </p>
         </Fragment>
       );

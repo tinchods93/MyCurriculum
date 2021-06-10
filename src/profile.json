@@ -20,39 +20,79 @@
       "hackerrank": "https://www.hackerrank.com/TinchoDS93?hr_r=1"
     },
     "about_you": [
-      "Soy un Argentino apasionado por el desarrollo de aplicaciones web, mobile y también game development. Me considero una persona proactiva, siempre buscando mejorar en mi trabajo, siempre buscando soluciones a los problemas que se presentan.",
-      "Actualmente me encuentro cursando la carrera de Ingeniería en Sistemas de información, en 3ro/4to año en la Universidad Nacional de La Rioja. Estoy más que dispuesto a trabajar de forma virtual o a reubicarme en cuanto termine la carrera."
-    ],
-    "experience": [
-      "Enseñas – Proyecto universitario de autoría propia, se trata de un juego que ayuda el aprendizaje del lenguaje de señas argentino, actualmente en desarrollo, donde utilizamos tecnologías como Unity, Github, Krita, Blender y otras aplicaciones para ayudarnos a administrar el proyecto. También estamos aplicando la metodología ágil “SCRUM”",
-      "Actualmente somos 4 personas participando del proyecto, siendo yo el líder de éste. Pero, funcionalmente cumplo el rol de desarrollador utilizando C#. Por otro lado, también estoy encargado del modelado y animación de los personajes en Blender."
-    ],
-    "education": [
-      [
-        "Ingeniería en Sistemas de Información",
-        "2018 – presente. Universidad Nacional de La Rioja"
-      ]
+      "Soy un Argentino apasionado por el desarrollo de aplicaciones web, mobile y también game development.",
+      "Actualmente me encuentro cursando la carrera de Ingeniería en Sistemas de información, en 3ro/4to año en la Universidad Nacional de La Rioja.",
+      "Me considero una persona proactiva con mucha perseverancia, siempre buscando nuevos desafios que me ayuden a mejorar mis habilidades.",
+      "En cuanto al desarrollo, me gusta tanto Front-end como Back-end y la resolución de problemas."
     ],
     "projects": [
       {
-        "name": "JobList in React",
-        "url": "https://react-job-list-app.netlify.app/"
+        "name": "Enseñas",
+        "body": [
+          "Proyecto universitario de autoría propia, se trata de un juego que ayuda el aprendizaje del lenguaje de señas argentino, actualmente en desarrollo, donde utilizamos tecnologías como Unity, Github, Krita, Blender y otras aplicaciones para ayudarnos a administrar el proyecto. También estamos aplicando la metodología ágil “SCRUM”."
+        ]
+      },
+      {
+        "name": "JobList",
+        "body": [
+          "Proyecto final del curso React de Pilartecno. Utilizamos una apifake e hicimos consultas a través de axios."
+        ],
+        "URL": "https://react-job-list-app.netlify.app/"
+      },
+      {
+        "name": "InfoTec - V1",
+        "body": [
+          "Este fue el proyecto final para el curso de HTMl, CSS y JavaScript de PilarTecno. En este utilicé la LocalStorage como pseudo-base de datos y Bootstrap para algunas cosas como los containers."
+        ],
+        "URL": "https://github.com/Pilar-Tecnologico/curso2-mern-unlar"
+      },
+      {
+        "name": "InfoTec - V2",
+        "body": [
+          "Proyecto donde voy aplicando cosas que estoy viendo en el los cursos de PilarTecno, aun está en producción. Actualmente estoy usando la API de Mercadolibre para asi dedicarme a trabajar el front-end. A medida que avance en el back-end ire agregando una DB propia junto a su API."
+        ],
+        "URL": "https://github.com/tinchods93/Infotec-web"
+      }
+    ],
+    "education": [
+      {
+        "name": "Ingeniería en Sistemas de Información",
+        "body": "2018 – presente. Universidad Nacional de La Rioja",
+        "URL": "#"
       }
     ],
     "certificates": [
-      ["Desarrollo frontend con React", "PoloTecnologico La Rioja - 2021"],
-      [
-        "Desarrollo frontend frontend sin framework: Html, Css y Javascript",
-        "PoloTecnologico La Rioja - 2021"
-      ],
-      [
-        "Entorno de trabajo optimizado para React",
-        "PoloTecnologico La Rioja - 2021"
-      ],
-      ["Python Básico", "UnLaR - 2020"],
-      ["Python Intermedio", "UnLaR - 2020"],
-      ["JavaScript moderno", "Udemy - 2020"],
-      ["Python Data Science", "Udemy - 2019"]
+      {
+        "name": "Desarrollo frontend con React",
+        "body": "PoloTecnologico La Rioja - 2021",
+        "URL": "https://badges.openbadges.me/api/badgeitem/a99e8c44-69ea-4b1e-aa85-607947e18b87/metadata"
+      },
+      {
+        "name": "Desarrollo frontend frontend sin framework: Html, Css y Javascript",
+        "body": "PoloTecnologico La Rioja - 2021",
+        "URL": "https://badges.openbadges.me/api/badgeitem/7ed5b9bc-7e6e-4d56-900c-7a04513e8ff5/metadata"
+      },
+      {
+        "name": "Git, Github y Eslint",
+        "body": "PoloTecnologico La Rioja - 2021",
+        "URL": "https://badges.openbadges.me/api/badgeitem/eadfff0d-57ab-4044-8383-415e17baea24/metadata"
+      },
+      {
+        "name": "Python Básico",
+        "body": "UnLaR - 2020",
+        "URL": "https://drive.google.com/file/d/1i-eMvWO_XI-XoSl5apHzQ4TlDGnL4tTN/view?usp=sharing"
+      },
+      {
+        "name": "Python Intermedio",
+        "body": "UnLaR - 2020",
+        "URL": "https://drive.google.com/file/d/1IdyxqXHOnI-gBpC4Zs6c6RZ2rm-vBYZy/view?usp=sharing"
+      },
+      {
+        "name": "JavaScript moderno",
+        "body": "Udemy - 2020",
+        "URL": "https://www.udemy.com/certificate/UC-0f54a1e6-20f6-4bf0-8537-e4291849ad37/"
+      },
+      { "name": "Python Data Science", "body": "Udemy - 2019", "URL": "#" }
     ],
     "skills": {
       "JavaScript": 4,
