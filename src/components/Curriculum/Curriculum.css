@@ -28,7 +28,6 @@
 }
 .avatar-container {
   width: 100%;
-  background: wheat;
   height: 20em;
   margin-bottom: 10%;
 }
@@ -38,7 +37,6 @@
   min-width: 5em;
   min-height: 2em;
   height: 100%;
-  background: brown;
 }
 .avatar-img img {
   object-fit: contain;
