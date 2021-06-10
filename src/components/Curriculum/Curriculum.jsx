@@ -104,7 +104,9 @@ export default class Curriculum extends Component {
                   );
                 })}
               </div>
-              <div className='profile-text'>{this.spawnSocialNetworks()}</div>
+              <div className='social_media_icons'>
+                {this.spawnSocialNetworks()}
+              </div>
             </div>
             <div className='experience-data'>
               {this.spawnText('about_you', 'ACERCA DE MI')}
@@ -203,10 +205,12 @@ const Skills = ({ data, title, icon_class }) => {
       for (let index = 0; index < 5; index++) {
         if (index < data[key]) {
           skillsLevel.push(
-            <i className='fas fa-circle filled' key={index}></i>
+            <i className='fas fa-circle filled skills_icon' key={index}></i>
           );
         } else {
-          skillsLevel.push(<i className='fas fa-circle' key={index}></i>);
+          skillsLevel.push(
+            <i className='fas fa-circle skills_icon' key={index}></i>
+          );
         }
       }
       return (
@@ -227,7 +231,7 @@ const Skills = ({ data, title, icon_class }) => {
     <div className='section'>
       <div className='section-title'>
         <p>
-          <i className={`fas ${icon_class}`}></i>
+          <i className={`fas ${icon_class} title_icon`}></i>
           <span>{_data.title}</span>
         </p>
       </div>
@@ -241,7 +245,7 @@ const Section = ({ data, icon_class }) => {
     <div className='section'>
       <div className='section-title'>
         <p>
-          <i className={`fas ${icon_class}`}></i>
+          <i className={`fas ${icon_class} title_icon`}></i>
           <span>{data.title}</span>
         </p>
       </div>
