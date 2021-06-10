@@ -2,9 +2,17 @@
   "profile": {
     "name": "Martín Ezequiel dos Santos",
     "wanted_job": "Trainee Web Developer",
-    "email": "mds.designss@gmail.com",
-    "city": "La Rioja",
-    "country": "Argentina",
+    "personal_data": {
+      "email": "mds.designss@gmail.com",
+      "city": "La Rioja",
+      "country": "Argentina",
+      "DNI": "37.378.768",
+      "CUIT": "20-37378768-0",
+      "telefono": "(+54) 380 4419488",
+      "linkedin": "https://www.linkedin.com/in/martin-e-dos-santos/8",
+      "github": "https://github.com/tinchods93",
+      "hackerRank": "https://www.hackerrank.com/TinchoDS93"
+    },
     "social_networks": {
       "facebook": "https://www.facebook.com/tinchods1/",
       "github": "https://github.com/tinchods93",
@@ -25,26 +33,44 @@
         "2018 – presente. Universidad Nacional de La Rioja"
       ]
     ],
+    "projects": [
+      {
+        "name": "JobList in React",
+        "url": "https://react-job-list-app.netlify.app/"
+      }
+    ],
     "certificates": [
-      ["Python Básico", "UnLaR 2020"],
-      ["Python Intermedio", "UnLaR 2020"],
-      ["Python Data Science", "Udemy 2019"],
-      ["JavaScript moderno", "Udemy 2020"],
-      [
-        "Entorno de trabajo optimizado para React",
-        "PoloTecnologico La Rioja 2021"
-      ],
+      ["Desarrollo frontend con React", "PoloTecnologico La Rioja - 2021"],
       [
         "Desarrollo frontend frontend sin framework: Html, Css y Javascript",
-        "PoloTecnologico La Rioja 2021"
+        "PoloTecnologico La Rioja - 2021"
       ],
-      ["Desarrollo frontend con React", "PoloTecnologico La Rioja 2021"]
+      [
+        "Entorno de trabajo optimizado para React",
+        "PoloTecnologico La Rioja - 2021"
+      ],
+      ["Python Básico", "UnLaR - 2020"],
+      ["Python Intermedio", "UnLaR - 2020"],
+      ["JavaScript moderno", "Udemy - 2020"],
+      ["Python Data Science", "Udemy - 2019"]
     ],
+    "skills": {
+      "JavaScript": 4,
+      "React": "4",
+      "Node.js": 2,
+      "MongoDB": 2,
+      ".NET": 2,
+      "C#(UNITY)": "3",
+      "Python": "3"
+    },
+    "languages": { "Español": 5, "Ingles": 3 },
     "icon_classes": {
       "about_you": "fa-user-circle",
       "experience": "fa-briefcase",
       "education": "fa-graduation-cap",
-      "certificates": "fa-certificate"
+      "certificates": "fa-certificate",
+      "skills": "fa-laptop-code",
+      "languages": "fa-language"
     }
   }
 }

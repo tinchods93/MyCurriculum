@@ -1,8 +1,8 @@
 .curriculum-card {
   display: grid;
   border-radius: 10px;
-  grid-template-columns: 30% 70%;
-  width: 80rem;
+  grid-template-columns: 35% 65%;
+  width: 90rem;
   height: fit-content;
   background: rgb(255, 255, 255);
   overflow: hidden;
@@ -33,19 +33,25 @@
   font-weight: bolder;
   font-size: 1.6rem;
 }
-.profile-email {
-  font-size: 1rem;
-}
 .profile-text {
   margin-bottom: 5%;
 }
 
-.profile-text p {
+.profile-text .personal-data-container {
+  display: flex;
   color: white;
   font-weight: 600;
   font-size: 1rem;
+  padding-left: 8%;
+  margin-bottom: 1%;
 }
-
+.profile-text .pdataAttribute {
+  text-align: start;
+  width: 100px;
+}
+.profile-text .pdataValue {
+  font-weight: 200;
+}
 .experience-data {
   height: 100%;
   width: 100%;
@@ -91,4 +97,23 @@
 }
 .exp-title {
   font-weight: bolder;
+}
+
+.section-body .filled {
+  color: cornflowerblue;
+}
+.skills {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  column-gap: 2%;
+  overflow: hidden;
+}
+.skillsContainer {
+  display: flex;
+  width: 100%;
+  margin-bottom: 1%;
+}
+.skill-title {
+  /* background: blueviolet; */
+  width: 100px;
 }
