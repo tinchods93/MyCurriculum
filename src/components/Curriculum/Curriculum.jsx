@@ -5,26 +5,29 @@ import avatar from '../../img/avatar.jpg';
 import './Curriculum.css';
 
 export default class Curriculum extends Component {
-  constructor() {
-    super();
-    this.state = {
-      profile: {},
-    };
+  constructor(props) {
+    super(props);
+    this.state = { language: 'es', profile: {} };
   }
 
   componentDidMount() {
     this.loadProfile();
   }
 
-  loadProfile = () => {
-    this.setState({ profile: Profile });
+  loadProfile = async () => {
+    await this.setState({ profile: Profile });
+  };
+  changeLang = (ev) => {
+    console.log('CLICK', ev.target.id);
+    this.setState({ language: ev.target.id });
   };
 
   spawnText = (key, title) => {
-    const { profile } = this.state;
+    const { profile, language } = this.state;
+    console.log(profile[language]);
     const about = {
       title: title,
-      body: profile[key].map((item, index) => {
+      body: profile[language][key].map((item, index) => {
         return (
           <Fragment key={index}>
             <span className='desc-text'>{item}</span>
@@ -34,20 +37,22 @@ export default class Curriculum extends Component {
       }),
     };
 
-    return <Section data={about} icon_class={profile.icon_classes[key]} />;
+    return (
+      <Section data={about} icon_class={profile[language].icon_classes[key]} />
+    );
   };
 
   spawnSocialNetworks = () => {
-    const { profile } = this.state;
+    const { profile, language } = this.state;
     console.log();
-    const keys = Object.keys(profile.social_networks);
+    const keys = Object.keys(profile[language].social_networks);
     const icons = keys.map((social_network, index) => {
       return social_network === 'linkedin' ? (
-        <a href={profile.social_networks[social_network]} key={index}>
+        <a href={profile[language].social_networks[social_network]} key={index}>
           <i className={`sn-icon fab fa-${social_network}`} />
         </a>
       ) : (
-        <a href={profile.social_networks[social_network]} key={index}>
+        <a href={profile[language].social_networks[social_network]} key={index}>
           <i className={`sn-icon fab fa-${social_network}-square`}></i>
         </a>
       );
@@ -56,25 +61,33 @@ export default class Curriculum extends Component {
   };
 
   render() {
-    const { profile } = this.state;
-
+    const { language, profile } = this.state;
+    console.log('ACTUALIZADO', profile[language]);
     const personal_data_attributes =
-      profile.personal_data !== undefined
-        ? Object.keys(profile.personal_data)
+      profile[language] !== undefined
+        ? Object.keys(profile[language].personal_data)
         : [];
     return (
       <>
-        {profile.personal_data !== undefined ? (
+        {profile[language] !== undefined ? (
           <div className='curriculum-card'>
             <div className='personal-data'>
+              <div className='set_lang_btn'>
+                <button className='langbtn' id='es' onClick={this.changeLang}>
+                  ES
+                </button>
+                <button className='langbtn' id='en' onClick={this.changeLang}>
+                  EN
+                </button>
+              </div>
               <div className='avatar-container'>
                 <div className='avatar-img'>
                   <img src={avatar} alt='avatar' />
                 </div>
               </div>
               <div className='profile-title'>
-                <span className='profile-name'>{profile.name}</span>
-                <p>{profile.wanted_job}</p>
+                <span className='profile-name'>{profile[language].name}</span>
+                <p>{profile[language].wanted_job}</p>
               </div>
               <div className='profile-text'>
                 {personal_data_attributes.map((attr, index) => {
@@ -90,13 +103,13 @@ export default class Curriculum extends Component {
                           attr !== 'linkedin' &&
                           attr !== 'github' &&
                           attr !== 'hackerRank' ? (
-                            capitalize(profile.personal_data[attr])
+                            capitalize(profile[language].personal_data[attr])
                           ) : attr !== 'email' && attr !== 'telefono' ? (
-                            <a href={profile.personal_data[attr]}>
-                              {profile.personal_data[attr]}
+                            <a href={profile[language].personal_data[attr]}>
+                              {profile[language].personal_data[attr]}
                             </a>
                           ) : (
-                            profile.personal_data[attr]
+                            profile[language].personal_data[attr]
                           )}
                         </div>
                       </div>
@@ -109,31 +122,38 @@ export default class Curriculum extends Component {
               </div>
             </div>
             <div className='experience-data'>
-              {this.spawnText('about_you', 'ACERCA DE MI')}
+              {this.spawnText(
+                'about_you',
+                language === 'es' ? 'ACERCA DE MI' : 'ABOUT ME'
+              )}
               <Item
-                data={profile.education}
-                title={'EDUCACIÓN'}
-                icon_class={profile.icon_classes.education}
+                data={profile[language].education}
+                title={language === 'es' ? 'EDUCACIÓN' : 'EDUCATION'}
+                icon_class={profile[language].icon_classes.education}
               />
               <Item
-                data={profile.projects}
-                title={'PROJECTOS'}
-                icon_class={profile.icon_classes.experience}
+                data={profile[language].projects}
+                title={language === 'es' ? 'PROJECTOS' : 'PROJECTS'}
+                icon_class={profile[language].icon_classes.experience}
               />
               <Skills
-                data={profile.skills}
-                title={'HABILIDADES'}
-                icon_class={profile.icon_classes.skills}
+                data={profile[language].skills}
+                title={
+                  language === 'es'
+                    ? 'LENGUAJES DE PROGRAMACION Y TECNOLOGÍAS'
+                    : 'PROGRAMMING LANGUAGES AND TECHNOLOGIES'
+                }
+                icon_class={profile[language].icon_classes.skills}
               />
               <Skills
-                data={profile.languages}
-                title={'LENGUAJES'}
-                icon_class={profile.icon_classes.languages}
+                data={profile[language].languages}
+                title={language === 'es' ? 'IDIOMAS' : 'LANGUAGES'}
+                icon_class={profile[language].icon_classes.languages}
               />
               <Item
-                data={profile.certificates}
-                title={'CERTIFICADOS'}
-                icon_class={profile.icon_classes.certificates}
+                data={profile[language].certificates}
+                title={language === 'es' ? 'CERTIFICADOS' : 'CERTIFICATES'}
+                icon_class={profile[language].icon_classes.certificates}
               />
             </div>
           </div>
