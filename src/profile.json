@@ -50,9 +50,9 @@
         {
           "name": "InfoTec - V2",
           "body": [
-            "Proyecto donde voy aplicando cosas que estoy viendo en el los cursos de PilarTecno, aun está en producción. Actualmente estoy usando la API de Mercadolibre para asi dedicarme a trabajar el front-end. A medida que avance en el back-end ire agregando una DB propia junto a su API."
+            "Proyecto donde voy aplicando cosas que estoy viendo en los cursos de PilarTecno, por tanto, aun está en producción. Actualmente estoy usando la API de Mercadolibre para asi dedicarme a trabajar el front-end. A medida que avance en el back-end ire agregando una DB propia junto a su API."
           ],
-          "URL": "https://github.com/tinchods93/Infotec-web"
+          "URL": "https://infotec.netlify.app/"
         }
       ],
       "education": [
@@ -166,7 +166,7 @@
           "body": [
             "This is a personal project in wich i'm applying everything i've learned in the courses dictated by PilarTecno, its still in development. I'm currently using Mercadolibre's API so i can work on the front-end. I'll implement my own mongoDB database and an API."
           ],
-          "URL": "https://github.com/tinchods93/Infotec-web"
+          "URL": "https://infotec.netlify.app/"
         }
       ],
       "education": [

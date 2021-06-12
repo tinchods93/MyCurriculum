@@ -18,19 +18,17 @@ export default class Curriculum extends Component {
     await this.setState({ profile: Profile });
   };
   changeLang = (ev) => {
-    console.log('CLICK', ev.target.id);
     this.setState({ language: ev.target.id });
   };
 
   spawnText = (key, title) => {
     const { profile, language } = this.state;
-    console.log(profile[language]);
     const about = {
       title: title,
       body: profile[language][key].map((item, index) => {
         return (
           <Fragment key={index}>
-            <span className='desc-text'>{item}</span>
+            <span className='item__desc__text'>{item}</span>
             <br />
           </Fragment>
         );
@@ -44,7 +42,6 @@ export default class Curriculum extends Component {
 
   spawnSocialNetworks = () => {
     const { profile, language } = this.state;
-    console.log();
     const keys = Object.keys(profile[language].social_networks);
     const icons = keys.map((social_network, index) => {
       return social_network === 'linkedin' ? (
@@ -62,7 +59,6 @@ export default class Curriculum extends Component {
 
   render() {
     const { language, profile } = this.state;
-    console.log('ACTUALIZADO', profile[language]);
     const personal_data_attributes =
       profile[language] !== undefined
         ? Object.keys(profile[language].personal_data)
@@ -70,58 +66,60 @@ export default class Curriculum extends Component {
     return (
       <>
         {profile[language] !== undefined ? (
-          <div className='curriculum-card'>
-            <div className='personal-data'>
-              <div className='set_lang_btn'>
-                <button className='langbtn' id='es' onClick={this.changeLang}>
+          <div className='curriculum__card'>
+            <div className='curriculum__card__pdata'>
+              <div className='curriculum__card__lang'>
+                <button className='lang__btn' id='es' onClick={this.changeLang}>
                   ES
                 </button>
-                <button className='langbtn' id='en' onClick={this.changeLang}>
+                <button className='lang__btn' id='en' onClick={this.changeLang}>
                   EN
                 </button>
               </div>
-              <div className='avatar-container'>
-                <div className='avatar-img'>
-                  <img src={avatar} alt='avatar' />
+              <div className='pdata'>
+                <div className='pdata__avatar'>
+                  <div className='pdata__avatar__img'>
+                    <img src={avatar} alt='avatar' />
+                  </div>
+                </div>
+                <div className='pdata__title'>
+                  <span>{profile[language].name}</span>
+                  <p>{profile[language].wanted_job}</p>
+                </div>
+                <div className='pdata__text'>
+                  {personal_data_attributes.map((attr, index) => {
+                    return (
+                      <Fragment key={index}>
+                        <div className='__container'>
+                          <div className='__attribute'>
+                            <span>{capitalize(attr)}:</span>
+                          </div>
+                          <div className='__value'>
+                            {attr !== 'email' &&
+                            attr !== 'telefono' &&
+                            attr !== 'linkedin' &&
+                            attr !== 'github' &&
+                            attr !== 'hackerRank' ? (
+                              capitalize(profile[language].personal_data[attr])
+                            ) : attr !== 'email' && attr !== 'telefono' ? (
+                              <a href={profile[language].personal_data[attr]}>
+                                {profile[language].personal_data[attr]}
+                              </a>
+                            ) : (
+                              profile[language].personal_data[attr]
+                            )}
+                          </div>
+                        </div>
+                      </Fragment>
+                    );
+                  })}
+                </div>
+                <div className='social_media_icons'>
+                  {this.spawnSocialNetworks()}
                 </div>
               </div>
-              <div className='profile-title'>
-                <span className='profile-name'>{profile[language].name}</span>
-                <p>{profile[language].wanted_job}</p>
-              </div>
-              <div className='profile-text'>
-                {personal_data_attributes.map((attr, index) => {
-                  return (
-                    <Fragment key={index}>
-                      <div className='personal-data-container'>
-                        <div className='pdataAttribute'>
-                          <span>{capitalize(attr)}:</span>
-                        </div>
-                        <div className='pdataValue'>
-                          {attr !== 'email' &&
-                          attr !== 'telefono' &&
-                          attr !== 'linkedin' &&
-                          attr !== 'github' &&
-                          attr !== 'hackerRank' ? (
-                            capitalize(profile[language].personal_data[attr])
-                          ) : attr !== 'email' && attr !== 'telefono' ? (
-                            <a href={profile[language].personal_data[attr]}>
-                              {profile[language].personal_data[attr]}
-                            </a>
-                          ) : (
-                            profile[language].personal_data[attr]
-                          )}
-                        </div>
-                      </div>
-                    </Fragment>
-                  );
-                })}
-              </div>
-              <div className='social_media_icons'>
-                {this.spawnSocialNetworks()}
-              </div>
             </div>
-            <div className='experience-data'>
+            <div className='curriculum__card__edata'>
               {this.spawnText(
                 'about_you',
                 language === 'es' ? 'ACERCA DE MI' : 'ABOUT ME'
@@ -171,8 +169,8 @@ const Item = ({ data, title, icon_class }) => {
     body: data.map((element, index) => {
       return title === 'PROJECTOS' ? (
         <Fragment key={index}>
-          <p className='desc-text'>
-            <span className='exp-title'>{element.name}</span>
+          <p className='item__desc__text'>
+            <span className='edata__title'>{element.name}</span>
             <span> </span>
             <span>
               {element.body.map((elem, index) => {
@@ -186,7 +184,7 @@ const Item = ({ data, title, icon_class }) => {
               })}
             </span>
             {element.URL !== undefined && element.URL !== '#' ? (
-              <a href={element.URL} className='title_link'>
+              <a href={element.URL} className='item__link'>
                 [LINK]
               </a>
             ) : (
@@ -196,12 +194,12 @@ const Item = ({ data, title, icon_class }) => {
         </Fragment>
       ) : (
         <Fragment key={index}>
-          <p className='desc-text'>
-            <span className='exp-title'>{element.name}</span>
+          <p className='item__desc__text'>
+            <span className='edata__title'>{element.name}</span>
             <span> </span>
-            <span>{element.body}</span>
+            <span className='edata_date'>{element.body}</span>
             {element.URL !== undefined && element.URL !== '#' ? (
-              <a href={element.URL} className='title_link'>
+              <a href={element.URL} className='item__link'>
                 [LINK]
               </a>
             ) : (
@@ -225,21 +223,21 @@ const Skills = ({ data, title, icon_class }) => {
       for (let index = 0; index < 5; index++) {
         if (index < data[key]) {
           skillsLevel.push(
-            <i className='fas fa-circle filled skills_icon' key={index}></i>
+            <i className='fas fa-circle skills__icon--filled ' key={index}></i>
           );
         } else {
           skillsLevel.push(
-            <i className='fas fa-circle skills_icon' key={index}></i>
+            <i className='fas fa-circle skills__icon' key={index}></i>
           );
         }
       }
       return (
         <Fragment key={index}>
-          <div className='skillsContainer desc-text'>
-            <div className='skill-title'>
-              <span className='exp-title'>{key}:</span>
+          <div className='skills__container item__desc__text'>
+            <div className='skill__title'>
+              <span className='edata__title'>{key}:</span>
             </div>
-            <div className='skillLevel'>
+            <div className='skill__level'>
               <span>{skillsLevel}</span>
             </div>
           </div>
@@ -249,13 +247,13 @@ const Skills = ({ data, title, icon_class }) => {
   };
   return (
     <div className='section'>
-      <div className='section-title'>
+      <div className='section__title'>
         <p>
-          <i className={`fas ${icon_class} title_icon`}></i>
+          <i className={`fas ${icon_class} __title-icon`}></i>
           <span>{_data.title}</span>
         </p>
       </div>
-      <div className='section-body skills'>{_data.body}</div>
+      <div className='section__body skills'>{_data.body}</div>
     </div>
   );
 };
@@ -263,13 +261,13 @@ const Skills = ({ data, title, icon_class }) => {
 const Section = ({ data, icon_class }) => {
   return (
     <div className='section'>
-      <div className='section-title'>
+      <div className='section__title'>
         <p>
-          <i className={`fas ${icon_class} title_icon`}></i>
+          <i className={`fas ${icon_class} __title-icon`}></i>
           <span>{data.title}</span>
         </p>
       </div>
-      <div className='section-body'>{data.body}</div>
+      <div className='section__body'>{data.body}</div>
     </div>
   );
 };

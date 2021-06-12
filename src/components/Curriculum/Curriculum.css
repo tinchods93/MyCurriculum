@@ -1,8 +1,7 @@
-.curriculum-card {
+.curriculum__card {
   display: flex;
   border-radius: 10px;
   flex-wrap: wrap;
-  /* grid-template-columns: 35% 65%; */
   width: 100em;
   min-width: 350px;
   height: fit-content;
@@ -12,9 +11,12 @@
   text-align: justify;
 }
 
-.personal-data {
+.curriculum__card__pdata {
   background: rgb(20, 56, 91);
   flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   height: auto;
   width: 100%;
   min-width: 1fr;
@@ -23,25 +25,23 @@
     rgba(20, 56, 91, 1) 0%,
     rgba(22, 134, 236, 1) 100%
   );
-  padding-top: 30%;
-  padding-left: 0.5%;
-  padding-right: 1%;
+  padding: 10px;
   box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.4);
   text-align: center;
+  align-items: center;
 }
-.set_lang_btn {
+
+.curriculum__card__lang {
   width: 8em;
   height: 2em;
   border-radius: 20px;
+  margin: 10px;
   overflow: hidden;
-  position: absolute;
-  top: 5%;
-  margin-left: 1%;
 }
-.set_lang_btn :first-child {
+.curriculum__card__lang :first-child {
   border-right: 3px solid rgba(255, 255, 255, 0.2);
 }
-.langbtn {
+.lang__btn {
   width: 50%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.2);
@@ -50,19 +50,22 @@
   border: none;
 }
 
-.avatar-container {
+.pdata {
+  margin: auto;
+}
+.pdata__avatar {
   width: 100%;
   height: 20em;
   margin-bottom: 10%;
 }
-.avatar-img {
+.pdata__avatar__img {
   width: 100%;
   max-height: 20em;
   min-width: 5em;
   min-height: 2em;
   height: 100%;
 }
-.avatar-img img {
+.pdata__avatar__img img {
   object-fit: contain;
   border-radius: 50%;
 
@@ -73,24 +76,24 @@
   max-height: 20em;
   min-height: 5em;
 }
-.profile-title p {
+.pdata__title p {
   color: white;
   font-size: 1.2rem;
   font-weight: 600;
 }
-.profile-name {
+.pdata__title span {
   color: white;
   font-weight: bolder;
   font-size: 1.6rem;
 }
-.profile-text {
+
+.pdata__text {
   width: 100%;
   height: auto;
   display: block;
   margin-bottom: 5%;
 }
-
-.profile-text .personal-data-container {
+.pdata__text .__container {
   display: flex;
   flex-wrap: wrap;
   color: white;
@@ -99,18 +102,18 @@
   padding-left: 8%;
   margin-bottom: 1%;
 }
-.profile-text .pdataAttribute {
+.pdata__text .__attribute {
   text-align: start;
   width: 100px;
 }
-.profile-text .pdataValue {
+.pdata__text .__value {
   font-weight: 200;
 }
-.pdataValue a {
+.__value a {
   color: white;
   text-decoration: none;
 }
-.experience-data {
+.curriculum__card__edata {
   flex: 2;
   height: 100%;
   width: 100%;
@@ -118,13 +121,8 @@
   padding: 5%;
   text-align: justify;
 }
-.sn-icon {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 3em;
-  margin: 1%;
-}
 
-.title_icon {
+.__title-icon {
   font-size: 2em;
   color: rgb(32, 32, 85);
 }
@@ -132,10 +130,10 @@
   color: rgb(172, 172, 76);
 }
 
-.section-title {
+.section__title {
   height: 100%;
 }
-.section-title span {
+.section__title span {
   font-size: 1.5rem;
   font-weight: bold;
   margin-left: 1%;
@@ -145,22 +143,22 @@
   height: fit-content;
 }
 
-.section-body {
+.section__body {
   color: rgb(139, 139, 139);
   height: 100%;
   width: 100%;
   margin-bottom: 3%;
 }
-.title_link {
+.item__link {
   margin-left: 1%;
   color: rgb(161, 161, 255);
   text-decoration: none;
 }
-.desc-text {
+.item__desc__text {
   font-size: 1.1rem;
 }
 
-.exp-title {
+.edata__title {
   font-weight: bolder;
 }
 
@@ -170,38 +168,38 @@
   column-gap: 2%;
   overflow: hidden;
 }
-.skillsContainer {
+.skills__container {
   display: flex;
   flex-wrap: wrap;
   height: 100%;
   width: 100%;
   margin-bottom: 1%;
 }
-.skillLevel {
+.skill__level {
   font-size: 35px;
   min-width: 170px;
 }
-.skills_icon {
+.skills__icon {
   font-size: 1em;
   color: rgb(19, 19, 56);
 }
 
-.section-body .filled {
+.skills__icon--filled {
   color: cornflowerblue;
 }
-.skill-title {
+.skill__title {
   padding-top: 10px;
   width: 100px;
   min-width: 1fr;
 }
 
 @media screen and (min-width: 320px) {
-  .skills_icon {
+  .skills__icon {
     font-size: calc(30px + 6 * ((100vw - 320px) / 680));
   }
 }
 @media screen and (min-width: 1000px) {
-  .skills_icon {
+  .skills__icon {
     font-size: 35px;
   }
 }

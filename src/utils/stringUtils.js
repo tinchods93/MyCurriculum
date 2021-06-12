@@ -9,7 +9,6 @@ export const capitalize = (word = '') => {
         words[i] = first_letter + String(words[i]).substring(1);
       }
       word = words.join(' ');
-
       return word;
     }
     let first_letter = String(word)[0];
